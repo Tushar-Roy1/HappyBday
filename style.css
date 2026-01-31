@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow-x: hidden;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  position: relative;
+  padding: 20px;
+  margin-top: 40px;
+  z-index: 2;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  animation: glow 2s infinite alternate;
+}
+
+.message {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 20px auto;
+}
+.countdown {
+  margin-bottom: 30px; /* adds space below countdown */
+}
+
+button {
+  padding: 12px 28px;
+  border: none;
+  background: white;
+  color: #ff4e7a;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover { transform: scale(1.1); }
+
+.hidden { display: none; }
+
+/* Countdown */
+#timer { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+#timer span {
+  background: rgba(255,255,255,0.2);
+  padding: 10px 15px;
+  border-radius: 12px;
+}
+
+/* Glow */
+@keyframes glow {
+  from { text-shadow: 0 0 10px white; }
+  to { text-shadow: 0 0 20px pink; }
+}
+
+/* Fade */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Photo Slider */
+.photo-slider { margin-top: 25px; max-width: 320px; margin-inline: auto; }
+.slide { display: none; width: 100%; border-radius: 15px; }
+.slide.active { display: block; animation: fadeIn 2s ease; }
+
+/* Background glow on surprise */
+.surprise-active {
+  animation: glowBg 2s ease forwards;
+}
+@keyframes glowBg {
+  to { background: linear-gradient(135deg, #ff758c, #ff7eb3); }
+}
+
+/* Fireworks */
+.firework {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: gold;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+}
+@keyframes explode {
+  to { transform: translate(var(--x), var(--y)); opacity: 0; }
+}
+
+/* Floating hearts */
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Balloons */
+.balloons, .cakes {
+  position: fixed;
+  bottom: -100px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.balloon { position: absolute; width: 40px; animation: floatUpBalloon linear infinite; }
+@keyframes floatUpBalloon {
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+.cake { position: absolute; font-size: 30px; animation: floatUpCake linear infinite; }
+@keyframes floatUpCake {
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+/* Make sure floating layers are visible */
+.balloons, .cakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Balloon style */
+.balloon {
+  position: absolute;
+  bottom: -60px;
+  width: 40px;
+  animation: riseBalloon linear infinite;
+}
+
+@keyframes riseBalloon {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Cake style */
+.cake {
+  position: absolute;
+  bottom: -60px;
+  font-size: 28px;
+  animation: riseCake linear infinite;
+}
+
+@keyframes riseCake {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+.hidden {
+  display: none;
+}
