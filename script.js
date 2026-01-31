@@ -100,3 +100,10 @@ for (let i = 0; i < 12; i++) {
   c.style.animationDuration = (8 + Math.random()*5) + "s";
   cakeContainer.appendChild(c);
 }
+document.getElementById("introScreen").addEventListener("click", function () {
+  const music = document.getElementById("bgMusic");
+  music.play();
+
+  this.style.opacity = "0";
+  setTimeout(() => this.style.display = "none", 800);
+});
