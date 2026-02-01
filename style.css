@@ -184,3 +184,30 @@ button:hover { transform: scale(1.1); }
   font-size: 1.2rem;
   margin-top: 10px;
 }
+.reasons-box {
+  margin-top: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 2s ease;
+}
+
+.reasons-box h2 {
+  margin-bottom: 10px;
+}
+
+.reasons-box ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.reasons-box li {
+  margin-bottom: 6px;
+  line-height: 1.4em;
+}
